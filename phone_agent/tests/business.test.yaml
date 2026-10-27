@@ -1,0 +1,18 @@
+name: Test Cafe
+timezone: America/New_York
+greeting: Thanks for calling Test Cafe!
+info: |
+  Hours: every day 11am-9pm
+transfers:
+  manager:
+    number: "+15550001111"
+    when: anything else
+staff_sms:
+  - "+15550002222"
+takeout:
+  enabled: true
+  prep_minutes: 20
+  max_items: 5
+  hidden_categories: ["Alcohol"]
+reservations:
+  max_party_phone: 8
