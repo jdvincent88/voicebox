@@ -1,0 +1,58 @@
+# Copy to business.yaml and edit. Everything here is read when the server
+# starts; restart after changes. Anything marked TODO must be filled in.
+
+name: Miz Kathi's Cotillion Southern Cafe
+timezone: America/New_York
+
+# Spoken by the cloned Voicebox voice if VOICEBOX_URL is set, otherwise by
+# the phone TTS voice.
+greeting: >-
+  Thanks for calling Miz Kathi's Cotillion Southern Cafe! This is our
+  virtual host. I can answer questions, place a takeout order, or book a
+  table. How can I help you?
+
+# Free text the agent treats as the source of truth for questions. Keep it
+# factual and short; the agent will not invent anything not written here.
+info: |
+  Address: TODO street, city, FL zip
+  Hours:
+    TODO e.g. Tuesday-Saturday 11am-8pm, Sunday 10am-3pm brunch, closed Monday
+  Parking: TODO
+  Takeout: call-ahead pickup, paid by text link before we start cooking.
+  Delivery: TODO (e.g. "through DoorDash only; we cannot place delivery orders by phone")
+  Sister businesses:
+    - Miz Kathi's Southern Sweetery (bakery): whole cakes need TODO hours notice.
+    - Magnolia Room: private event space for parties, showers, rehearsal dinners.
+  Catering: available; the events team follows up on every request.
+  Gift cards: TODO
+  Allergies: we can note allergies on orders, but our kitchen handles peanuts,
+    tree nuts, wheat, dairy, eggs and shellfish, so we cannot guarantee
+    an allergen-free meal.
+
+# Where a call can be transferred. The agent picks a key; the number is
+# never read aloud. `when` tells the agent what each line is for.
+transfers:
+  manager:
+    number: "+1TODO"
+    when: complaints, refunds, anything the agent cannot handle, or a caller who asks for a person
+  catering:
+    number: "+1TODO"
+    when: catering orders and quotes
+  events:
+    number: "+1TODO"
+    when: Magnolia Room events the caller wants to discuss right now
+
+# Mobile numbers that get a text for every booking, order and message.
+staff_sms:
+  - "+1TODO"
+
+takeout:
+  enabled: true
+  prep_minutes: 25          # quoted pickup time for ASAP orders
+  max_items: 30             # larger orders go to catering
+  # Square catalog category names to leave off the phone menu.
+  hidden_categories: ["Alcohol", "Gift Cards"]
+
+reservations:
+  # Parties above this size are taken as Magnolia Room event leads instead.
+  max_party_phone: 10
